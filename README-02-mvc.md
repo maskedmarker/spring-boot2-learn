@@ -1,0 +1,26 @@
+# 关于spring-boot中mvc的学习
+注意:
+1.spring-boot中的mvc与spring-framework的mvc用法有点不同,注意区分.
+2.关于embeddedTomcat的知识,在单独的项目里有详细的说明
+
+
+
+## 关于spring-boot的ApplicationContext
+1. 
+2. DispatcherServlet通过编程式注册到servlet container,并没有在注册时直接初始化,而是在用户请求到来时才被初始化.此时才有了dispatcher-WebApplicationContext.
+3. DispatcherServlet被注入到了root-WebApplicationContext
+4. 因为DispatcherServlet是ApplicationContextAware,所以webApplicationContext被赋值了它所在的容器
+5. 在DispatcherServlet初始化时,因为已经有了对应的dispatcher-WebApplicationContext,所以并不会新创建一个容器,而是借用已有的容器.
+6. dispatcher-WebApplicationContext与root-WebApplicationContext是同一个容器,这一点与单纯的springmvc不一样.
+
+
+
+## todo
+spring-boot会创建root WebServerApplicationContext,即ServletWebServerApplicationContext;
+(spring-boot-autoconfigure模块中)spring-mvc会为DispatcherServlet创建web WebServerApplicationContext, 同时将该容器的parent设定为前面的root WebServerApplicationContext
+
+
+
+org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.requestMappingHandlerAdapter
+
+

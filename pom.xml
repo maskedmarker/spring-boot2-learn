@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>ch00-commons</module>
-        <module>ch50-inner-util</module>
         <module>ch01-hello</module>
     </modules>
 

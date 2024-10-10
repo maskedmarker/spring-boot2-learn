@@ -11,6 +11,7 @@
     <modules>
         <module>ch00-commons</module>
         <module>ch01-hello</module>
+        <module>ch02-custom-config-bootstrap</module>
     </modules>
 
     <properties>

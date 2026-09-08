@@ -106,3 +106,10 @@ public class AppConfig {
     // config2会覆盖config1,config3会覆盖config2
 }
 ```
+
+## @TestPropertySource
+
+```text
+@TestPropertySource 默认不支持 yml/yaml 文件,只支持 .properties
+可以通过@ActiveProfiles来完成加载不同的yml/yaml配置文件
+```
